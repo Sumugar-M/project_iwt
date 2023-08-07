@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <title>Crime Registration Form</title>
+    <link rel="stylesheet" href="../css/crimeform1.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Details About Complainant</h2>
+        <form id="complainant-form"  onsubmit="return validateForm()">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="fatherName">Father's Name:</label>
+            <input type="text" id="fatherName" name="fatherName" required>
+            <label>Gender:</label>
+            <input type="radio" id="male" name="gender" value="Male" required>
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="Female" required>
+            <label for="female">Female</label><br>
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+            <label for="qualification">Current Qualification:</label>
+            <select id="qualification" name="qualification" onchange="toggleOtherQualification()" required>
+                <option value="Farmer">Farmer</option>
+                <option value="Business Man">Business Man</option>
+                <option value="Student">Student</option>
+                <option value="Others">Others</option>
+                <!-- Add more options here if needed -->
+            </select>
+            <input type="text" id="otherQualification" name="otherQualification" style="display:none;">
+            <label for="aadhaar">Aadhaar Number:</label>
+            <input type="text" id="aadhaar" name="aadhaar"  required>
+            <label for="mobile">Mobile Number:</label>
+            <input type="tel" id="mobile" name="mobile" required>
+            <label for="email">Email ID:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" required></textarea>
+            <label for="district">District:</label>
+            <input type="text" id="district" name="district" required>
+            <label for="pincode">Pin Code:</label>
+            <input type="text" id="pincode" name="pincode" required>
+        </form>
+
+        <h2>Details About Complaint</h2>
+        <form id="complaint-form">
+            <label for="subject">Subject:</label>
+            <select id="subject" name="subject" onchange="toggleOtherSubject()" required>
+                <option value="PERSON MISSING">PERSON MISSING (நபர் காளாவில்லை)</option>
+                <option value="VEHICLE MISSING / THEFT">VEHICLE MISSING / THEFT (வாகனம் காணவில்லை திருட்டு)</option>
+                <option value="CELL PHONE MISSING / THEFT">CELL PHONE MISSING / THEFT (செல்போன் காணவில்லை / திருட்டு)</option>
+                <!-- Add more options here if needed -->
+                <option value="JEWEL SNATCHING / THEFT">JEWEL SNATCHING / THEFT (நகை பறிப்பு / திருட்டு)</option>
+                <option value="BAG LIFTING / THEFT">BAG LIFTING / THEFT (கைப்பை பறிப்பு / திருட்டு)</option>
+                <option value="OTHER THEFT">OTHER THEFT (பிற பொருள் திருட்டு)</option>
+                <option value="RECEIVING STOLEN PROPERTY">RECEIVING STOLEN PROPERTY (திருட்டு பொருள் வாங்குதல்)</option>
+                <option value="DOCUMENT MISSING">DOCUMENT MISSING (ஆவணம் காணவில்லை)</option>
+                <option value="CHEATING / EMBEZZLEMENT / LAND GRABBING">CHEATING / EMBEZZLEMENT / LAND GRABBING (ஏமாற்றுதல்/பணி/ நில மோசடி)</option>
+                <option value="MAKING COUNTERFEIT NOTES / COINS">MAKING COUNTERFEIT NOTES / COINS (கள்ள நோட்டு / நாணயம் தயாரித்தல்)</option>
+                <option value="MURDER">MURDER (கொலை செய்தல்)</option>
+                <option value="KIDNAPPING/WRONGFUL CONFINEMENT">KIDNAPPING/WRONGFUL CONFINEMENT (ஆள்கடத்தல் / சட்டவிரோதமாக அடைத்து வைத்தல்)</option>
+                <option value="HURT">HURT (அடித்தல் / காயம் ஏற்படுத்துதல்)</option>
+                <option value="DAMAGING PROPERTY">DAMAGING PROPERTY (சொத்தை அழித்தல்)</option>
+                <option value="WORDY QUERREL / THREATENING">WORDY QUERREL / THREATENING (வாய்தகராறு செய்தல் / மிரட்டல்)</option>
+                <option value="EXTORTION">EXTORTION (மிரட்டி பணம் / நகை / பொருள் பறித்தல்)</option>
+                <option value="PUBLIC NUISANCE">PUBLIC NUISANCE (பொது தொல்லை செய்தல்)</option>
+                <option value="EVE TEASING">EVE TEASING (பெண்களை கேலி செய்தல்)</option>
+                <option value="OFFENCE RELATED TO MARRIAGE">OFFENCE RELATED TO MARRIAGE (திருமணம் சம்பந்தமான குற்றங்கள்)</option>
+                <option value="RAPE">RAPE (கற்பழிந்தல்)</option>
+                <option value="TRAFFIC VIOLATION">TRAFFIC VIOLATION (போக்குவரத்து விதிமீறல்)</option>
+                <option value="OTHER OFFENCES">OTHER OFFENCES (பிற குற்றங்கள்)</option>
+                <option value="GANJA SALES/ILLEGAL MINING| ILLICIT DISTILLATION/ GAMBLING ETC">GANJA SALES/ILLEGAL MINING| ILLICIT DISTILLATION/ GAMBLING ETC (கஞ்சா விற்பனை/ சட்டவிரோத குவாரிகள் / கள்ளச்சாராயம் காய்ச்சுதல் / சூதாட்டம் போன்றவை)</option>
+
+
+
+
+
+                <option value="Others">Others</option>
+            </select>
+            <input type="text" id="otherSubject" name="otherSubject" style="display:none;">
+            <label for="place">Place of Occurrence:</label>
+            <input type="text" id="place" name="place" required>
+            <label for="date">Date of Occurrence:</label>
+            <input type="date" id="date" name="date" required>
+            <label for="time">Time of Occurrence:</label>
+            <input type="time" id="time" name="time" required>
+            <label for="description">Full Description:</label>
+            <textarea id="description" name="description" required></textarea>
+            <label for="image">Choose Image:</label>
+            <input type="file" id="image" name="image">
+            <label for="audio">Choose Audio:</label>
+            <input type="file" id="audio" name="audio">
+            <label for="video">Choose Video:</label>
+            <input type="file" id="video" name="video">
+        </form>
+
+        <button type="submit" form="complainant-form">Submit</button>
+    </div>
+    <script>
+
+function toggleOtherQualification() {
+            const qualificationSelect = document.getElementById('qualification');
+            const otherQualificationInput = document.getElementById('otherQualification');
+
+            if (qualificationSelect.value === 'Others') {
+                otherQualificationInput.style.display = 'block';
+                otherQualificationInput.required = true;
+            } else {
+                otherQualificationInput.style.display = 'none';
+                otherQualificationInput.required = false;
+            }
+        }
+        function isValidAadhaarNumber(x,y){
+            alert("fghj");
+            if(x.length()!=y){
+                 alert("please enter valid aadhaar number");
+                 return false;
+                 
+            }
+            else if(characterPattern.test(x)){
+                alert("please enter valid aadhaar number");
+                return false;
+
+            }
+            else{
+                return true;
+
+            }
+        }
+
+        function toggleOtherSubject() {
+            const subjectSelect = document.getElementById('subject');
+            const otherSubjectInput = document.getElementById('otherSubject');
+
+            if (subjectSelect.value === 'Others') {
+                otherSubjectInput.style.display = 'block';
+                otherSubjectInput.required = true;
+            } else {
+                otherSubjectInput.style.display = 'none';
+                otherSubjectInput.required = false;
+            }
+        }
+
+
+        function validateForm() {
+            // Get the form elements
+            const complainantForm = document.getElementById('complainant-form');
+            const complaintForm = document.getElementById('complaint-form');
+            const emailInput = document.getElementById('email');
+            const aadhaarInput = document.getElementById('aadhaar');
+            const mobileInput = document.getElementById('mobile');
+            const pincodeInput = document.getElementById('pincode');
+
+            // Check required fields for Complainant details
+            const complainantInputs = complainantForm.querySelectorAll('input[required], textarea[required]');
+            for (const input of complainantInputs) {
+                if (!input.value.trim()) {
+                    alert('This Field Must Not Be Empty.');
+                    return false;
+                }
+            }
+
+            // Check required fields for Complaint details
+            const complaintInputs = complaintForm.querySelectorAll('input[required], textarea[required]');
+            for (const input of complaintInputs) {
+                if (!input.value.trim()) {
+                    alert('This Field Must Not Be Empty.');
+                    return false;
+                }
+            }
+
+            // Check email format if provided
+            if (emailInput.value.trim() && !isValidEmail(emailInput.value)) {
+                alert('Please enter a valid Email ID.');
+                return false;
+            }
+
+            // Check Aadhaar, Mobile, and Pincode fields for numeric values
+            if (!isValidNumber(aadhaarInput.value, 12)) {
+                alert('Aadhaar Number must contain only 12 digits.');
+                return false;
+            }
+
+            if (!isValidNumber(mobileInput.value, 10)) {
+                alert('Mobile Number must contain only 10 digits.');
+                return false;
+            }
+
+            if (!isValidNumber(pincodeInput.value, 6)) {
+                alert('Pin Code must contain only 6 digits.');
+                return false;
+            }
+
+            // All validations passed, form can be submitted
+            return true;
+        }
+
+        function isValidEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+
+        function isValidNumber(value, requiredLength) {
+            const numericRegex = /^\d+$/;
+            return numericRegex.test(value) && value.length === requiredLength;
+        }
+
+
+
+    </script>
+    
+</body>
+</html>

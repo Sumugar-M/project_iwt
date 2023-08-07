@@ -1,0 +1,129 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(255, 255, 255);
+    margin: 0;
+    padding: 0;
+    background-image: url("../image/img3.jpg");
+    /* background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/double-bubble-outline.png');
+*/
+}
+
+.form-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    color: #333;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #666;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="time"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Custom Styling for Other Qualification and Subject Fields */
+#otherQualification,
+#otherSubject {
+    margin-top: 10px;
+    display: none;
+}
+
+/* Custom Styling for Error Messages */
+.error-message {
+    color: #f44336;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* Colorful Elements */
+.form-container {
+    background-color: #fff; /* White background to override the pattern */
+}
+
+button[type="submit"] {
+    background-color: #0084FF; /* Blue color for the submit button */
+}
+
+label,
+input,
+select,
+textarea {
+    border-color: #ddd; /* Light gray border color for form elements */
+}
+
+input[type="radio"]:checked + label {
+    color: #0084FF; /* Blue color for selected radio buttons */
+}
+
+select {
+    background-color: #f9f9f9; /* Light gray background for select elements */
+}
+
+/* Additional styles to enhance form appearance */
+input[type="file"] {
+    border: none;
+    background-color: #f9f9f9;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Styling for placeholders (optional) */
+::placeholder {
+    color: #aaa;
+}
+
+:-ms-input-placeholder {
+    color: #aaa;
+}
+
+::-ms-input-placeholder {
+    color: #aaa;
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="../css/signup.css">
+</head>
+<body>
+    <section>
+        <div class="form-box">
+            <div class="form-value">
+                <form id="signupForm" onsubmit="return validateForm()">
+                    <h2>Signup</h2>
+                    <div class="inputbox">
+                        <input type="text" id="firstName" required>
+                        <label>First Name</label>
+                    </div>
+                    <div class="inputbox">
+                        <input type="text" id="lastName" required>
+                        <label>Last Name</label>
+                    </div>
+                    <div class="inputbox">
+                        <input type="email" id="email" required>
+                        <label>Email</label>
+                    </div>
+                    <div class="inputbox">
+                        <input type="password" id="password" minlength="7" required>
+                        <label>Password</label>
+                    </div>
+                    <div class="inputbox">
+                        <input type="password" id="confirmPassword" minlength="7" required>
+                        <label>Re-Enter Password</label>
+                    </div>
+                    <div class="forget">
+                        <label><input type="checkbox">Remember Me</label>
+                    </div>
+                    <button type="submit">Sign Up</button>
+                    <div class="register">
+                        <p>Do you have an account? <a href="#">Sign In</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ion-icon installation: Start -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <!--ion-icon installation: End-->
+
+    <script>
+        function validateForm() {
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+
+            // Check if any field is empty
+            if (!firstName || !lastName || !email || !password || !confirmPassword) {
+                alert("All fields are required.");
+                return false;
+            }
+
+            // Check if the email contains "@" followed by a maximum of 5 characters
+            const emailRegex = /^[\w.-]+@[\w.-]{1,12}$/;
+            if (!emailRegex.test(email)) {
+                alert("Email must contain '@' followed by a maximum of 12 characters.");
+                return false;
+            }
+
+            // Check if the password is at least 7 characters long
+            if (password.length < 7) {
+                alert("Password must be at least 7 characters long.");
+                return false;
+            }
+
+            // Check if the password and re-entered password match
+            if (password !== confirmPassword) {
+                alert("Passwords do not match.");
+                return false;
+            }
+
+            // Check if the password and re-entered password meet the required combination of lowercase letters, numerical numbers, symbols, and uppercase letters
+            const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{7,}$/;
+            if (!passwordRegex.test(password) || !passwordRegex.test(confirmPassword)) {
+                alert("Password must be a combination of lowercase letters, numerical numbers, symbols, and uppercase letters.");
+                return false;
+            }
+
+            // If all validations pass, allow the form submission
+            return true;
+        }
+    </script>
+</body>
+</html>
